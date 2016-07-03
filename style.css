@@ -21,6 +21,7 @@ a {
 #home {
   background: url("http://s21.postimg.org/k7fy9a3bb/At_the_Office_Mac_Apple_Wallpapers_Creative_Plan.jpg") no-repeat;
   background-attachment: fixed;
+  background-size: cover;
 }
 
 #about {
