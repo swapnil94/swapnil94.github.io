@@ -19,25 +19,25 @@ a {
 }
 
 #home {
-  background: url("http://s21.postimg.org/k7fy9a3bb/At_the_Office_Mac_Apple_Wallpapers_Creative_Plan.jpg") no-repeat;
+  background: url("images/bg_home.jpg") no-repeat;
   background-attachment: fixed;
   background-size: cover;
 }
 
 #about {
-  background: url("http://s21.postimg.org/fy669ztqf/the_empire_state_building_HD.jpg") no-repeat;
+  background: url("images/bg_about.jpg") no-repeat;
   background-attachment: fixed;
   background-size: cover;
 }
 
 #portfolio {
-  background: url("http://s17.postimg.org/ye59a0jzj/points_cubes_background_light_91691_1920x1080.jpg") no-repeat;
+  background: url("images/bg_portfolio.jpg") no-repeat;
   background-attachment: fixed;
   background-size: cover;
 }
 
 #contact {
-  background: url("http://s17.postimg.org/ouvkgjwhb/JICXS.jpg") no-repeat;
+  background: url("images/bg_contact.jpg") no-repeat;
   background-attachment: fixed;
   background-size: cover;
   color:white;
