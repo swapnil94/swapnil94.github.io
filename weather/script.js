@@ -18,7 +18,7 @@ function getweather(){
   
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function(position) {
-      $.getJSON("http://api.openweathermap.org/data/2.5/weather?lat=" + position.coords.latitude + "&lon=" + position.coords.longitude + "&units=" + unit + "&appid=" + "dc4d96c1bd1b1083127cd3615cdecf8b", function(json) {
+      $.getJSON("https://api.openweathermap.org/data/2.5/weather?lat=" + position.coords.latitude + "&lon=" + position.coords.longitude + "&units=" + unit + "&appid=" + "dc4d96c1bd1b1083127cd3615cdecf8b", function(json) {
         temp = json.main.temp.toFixed(1);
         var iconurl = "http://openweathermap.org/img/w/" + json.weather[0].icon + ".png";
         var weathermain = json.weather[0].main;
