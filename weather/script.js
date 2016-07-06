@@ -51,7 +51,7 @@ function getweather(){
         $("#test").html(JSON.stringify(json));
         switch (weathermain) {
           case "Clear":
-            $("body").css("background", "url(http://cdn2.landscapehdwalls.com/wallpapers/1/amazing-clear-blue-sky-1775-1920x1200.jpg) no-repeat");
+            $("body").css("background", "url(images/clear.jpg) no-repeat");
             break;
           case "Thunder":
             $("body").css("background", "url(http://wallbeast.com/wp-content/uploads/2015/08/thunderstorm_3_cool_nature_wallpaper.jpg) no-repeat");
