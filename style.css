@@ -13,9 +13,7 @@ a {
   margin-left:8%;
 }
 .page {
-  background-size: cover;
-  color: black;
-  padding: 15% 5% 15% 5%;
+  padding: 17% 5% 17% 5%;
 }
 
 #home {
@@ -28,6 +26,7 @@ a {
   background: url("images/bg_about.jpg") no-repeat;
   background-attachment: fixed;
   background-size: cover;
+  padding: 10%;
 }
 
 #portfolio {
@@ -37,10 +36,8 @@ a {
 }
 
 #contact {
-  background: url("images/bg_contact.jpg") no-repeat;
+  background: url("images/bg_contact.jpg") repeat;
   background-attachment: fixed;
-  background-size: cover;
-  color:white;
 }
 
 #title {
@@ -90,5 +87,6 @@ a {
 }
 .email{
   font-size:30px;
-  padding:0 0 70px;
+  padding-top:5%;
+  padding-bottom:5%;
 }
