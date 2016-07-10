@@ -1,6 +1,5 @@
 var unit="metric",temp;
 $(document).ready(function() {
-  getweather();
   $("#changeunit").on("click", function() {
     if (unit == "metric") {
       unit = "imperial";
@@ -15,17 +14,17 @@ $(document).ready(function() {
   $("#locsubmit").on("click",getweather($("#locinput").html));
 });
 function getweather(){
-  
+  var skycons = new Skycons();
+  console.log("started");
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function(position) {
-      $.getJSON("https://api.openweathermap.org/data/2.5/weather?lat=" + position.coords.latitude + "&lon=" + position.coords.longitude + "&units=" + unit + "&appid=" + "dc4d96c1bd1b1083127cd3615cdecf8b", function(json) {
-        temp = json.main.temp.toFixed(1);
-        var iconurl = "http://openweathermap.org/img/w/" + json.weather[0].icon + ".png";
-        var weathermain = json.weather[0].main;
-        var location = json.name + ',' + json.sys.country;
-        var weather = json.weather[0].description;
+      $.getJSON("https://api.forecast.io/forecast/5666c4c14907952edf5f47bf61b14bd9/" + position.coords.latitude + "," + position.coords.longitude + "?units=si", function(json) {
+        temp = json.currently.temperature.toFixed(1);
+        var icon = json.currently.icon;
+        var loc = "testloc";//json.name + ',' + json.sys.country;
+        var weather = json.hourly.summary; 
         var wind = "";
-        var winddeg = json.wind.deg;
+        var winddeg = json.currently.windBearing;
         if (winddeg == 90)
           wind += "E";
         else if (winddeg == 180)
@@ -42,34 +41,47 @@ function getweather(){
           wind += "SW";
         else if (winddeg < 360)
           wind += "NW";
-        wind += " " + json.wind.speed + " knots";
-        $("#location").html(location);
+        wind += " " + json.currently.windSpeed + " knots";
+        $("#location").html(loc);
         $("#weather").html(weather);
         $("#wind").html(wind);
         $("#temp").html(temp + "°C");
-        $("#wicon").attr("src", iconurl);
-        $("#test").html(JSON.stringify(json));
-        switch (weathermain) {
-          case "Clear":
-            $("body").css("background", "url(images/clear.jpg) no-repeat");
+        skycons.add("wicon",icon);
+		skycons.play();
+        //$("#test").html(JSON.stringify(json));
+        switch (icon) {
+          case "clear-day":
+            $("body").css("background", "url(images/clear_day.jpg) no-repeat");
             break;
-          case "Thunder":
-            $("body").css("background", "url(http://wallbeast.com/wp-content/uploads/2015/08/thunderstorm_3_cool_nature_wallpaper.jpg) no-repeat");
+          case "clear-night":
+            $("body").css("background", "url(images/clear_night.jpg) no-repeat");
             break;
-          case "Clouds":
-            $("body").css("background", "url(http://cdn.superbwallpapers.com/wallpapers/photography/cloud-reflections-in-water-15881-1920x1080.jpg) no-repeat");
+          case "rain":
+            $("body").css("background", "url(images/rain.jpg) no-repeat");
             break;
-          case "Rain":
-            $("body").css("background", "url(http://images8.alphacoders.com/415/415520.jpg) no-repeat");
+          case "snow":
+            $("body").css("background", "url(images/snow.jpg) no-repeat");
             break;
-          case "Snow":
-            $("body").css("background", "url(http://tremendouswallpapers.com/wp-content/uploads/2014/12/14983_winter_winter_scene.jpg) no-repeat");
+          case "sleet":
+            $("body").css("background", "url(images/sleet.jpg) no-repeat");
             break;
-          case "Haze":
-            $("body").css("background", "url(https://blogshail.files.wordpress.com/2014/12/dsc06774.jpg) no-repeat");
+          case "wind":
+            $("body").css("background", "url(images/wind.jpg) no-repeat");
+            break;
+          case "fog":
+            $("body").css("background", "url(images/fog.jpg) no-repeat");
+            break;
+          case "cloudy":
+            $("body").css("background", "url(images/cloudy.jpg) no-repeat");
+            break;
+          case "partly-cloudy-day":
+            $("body").css("background", "url(images/cloudy.jpg) no-repeat");
+            break;
+          case "partly-cloudy-night":
+            $("body").css("background", "url(images/cloudy_night.jpg) no-repeat");
             break;
           default:
-            $("body").css("background", "url(http://wallpapercave.com/wp/IeFORpa.jpg) no-repeat");
+            $("body").css("background", "url(images/default.jpg) no-repeat");
         }
         $("body").css("background-size", "cover");
       });
