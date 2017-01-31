@@ -1,6 +1,7 @@
 body{
   font-family:orbitron;
   text-shadow: 1px 1px black;
+  background-size: cover;
 }
 #title{
   font-size:50px;
@@ -24,4 +25,11 @@ body{
 }
 .d1{
   padding:0px;
+}
+
+.row-eq-height {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display:         flex;
 }
