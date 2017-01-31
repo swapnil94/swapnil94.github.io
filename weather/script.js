@@ -18,7 +18,7 @@ function getweather(){
   console.log("started");
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function(position) {
-      $.getJSON("https://api.forecast.io/forecast/5666c4c14907952edf5f47bf61b14bd9/" + position.coords.latitude + "," + position.coords.longitude + "?units=si&callback=?", function(json) {
+      $.getJSON("https://api.darksky.net/forecast/5666c4c14907952edf5f47bf61b14bd9/" + position.coords.latitude + "," + position.coords.longitude + "?units=si&callback=?", function(json) {
         temp = json.currently.temperature.toFixed(1);
         var icon = json.currently.icon;
         var loc = "testloc";//json.name + ',' + json.sys.country;
