@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>Weather App</title>
+  <meta charset="utf-8" />
   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Orbitron">
   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
@@ -19,7 +20,7 @@
   <div class="row">
     <div class="col-md-12 col-sm-12 col-xs-12">
       <input id="locinput" type="text" placeholder="Enter Location">
-      <button id="locsubmit" class="btn btn-primary fa fa-search"></button>
+      <button id="locsubmit" class="btn btn-primary fa fa-search" onclick="fromLocation()"></button>
       </input>
     </div>
   </div>
@@ -36,10 +37,13 @@
   </div>
   <div class="row data1">
     <div class="col-md-3 col-sm-3"></div>
-    <div id="location" class="well col-md-2 col-sm-2"></div>
-    <div id="weather" class="well col-md-2 col-sm-2"></div>
-    <div id="wind" class="well col-md-2 col-sm-2"></div>
+    <div id="location" class="col-md-2 col-sm-2 row-eq-height"></div>
+    <div id="weather" class="col-md-2 col-sm-2 row-eq-height"></div>
+    <div id="wind" class="col-md-2 col-sm-2 row-eq-height"></div>
     <div class="col-md-3 col-sm-3"></div>
+  </div>
+  <div class="footer">
+    <div><a href="https://darksky.net/poweredby/">Powered by Dark Sky</a></div>
   </div>
 </div>
 </body>
