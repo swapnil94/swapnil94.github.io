@@ -1,22 +1,20 @@
 
-const unit="metric";
 const weatherAPIKey = "5666c4c14907952edf5f47bf61b14bd9";
 const geocodeAPIKey = "AIzaSyDpJsYiCtBTAo5x5-ABdGlx38lrhSOgR4M";
+let unit = "metric";
+let temp = 0;
 
 $(document).ready(function() {
   
-  /*$("#changeunit").on("click", function() {
-    
+  $("#changeunit").on("click", function() {
     if(unit == "metric") {
       unit = "imperial";
-      temp = (temp * 1.8 + 32).toFixed(1);
-      $("#temp").html(temp + "°F");
+      $("#temp").html((temp * 1.8 + 32).toFixed(1) + "°F");
     }else if(unit == "imperial") {
       unit = "metric";
-      temp = ((temp - 32) / 1.8).toFixed(1);
-      $("#temp").html(temp + "°C");
+      $("#temp").html(temp.toFixed(1) + "°C");
     }
-  });*/
+  });
   if(navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(
       function(position) {
@@ -64,13 +62,13 @@ function getWeather(latlonString){
   $.getJSON(
     weatherAPIEndpoint,
     function(json) {
-      let temp = json.currently.temperature.toFixed(1);
+      temp = json.currently.temperature;
       let weather = json.hourly.summary; 
       let wind = getWindDirection(json.currently.windBearing, json.currently.windSpeed);
       //$("#location").html(loc);
       $("#weather").html(weather);
       $("#wind").html(wind);
-      $("#temp").html(temp + " °C");
+      $("#temp").html(temp.toFixed(1) + " °C");
       setSkyConWallpaper(json.currently.icon);
     }
   );

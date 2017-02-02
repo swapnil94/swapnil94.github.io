@@ -3,32 +3,49 @@ body{
   text-shadow: 1px 1px black;
   background-size: cover;
 }
+
+table{
+  table-layout: fixed;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+}
+
+td + td, th + th{
+  border-left: 2px solid;
+}
+
+tr + tr{
+  border-top: 2px solid;
+}
+
 #title{
   font-size:50px;
 }
+
 #locinput{
   margin-top:3%;
   width:15%;
   padding:5px;
 }
+
 #temp{
   font-size:25px;
   font-weight:900;
   
 }
-.data, .data1{
-  border: 1px solid black;
-  border-radius: 5px;
-  background-color: gray;
-}
 
 .data{
-  margin-top:5%;
+  margin:5% auto 0 auto;
+  width: 50%;
 }
+
 .data1{
-  margin-top:40px;
+  margin-top: 40px;
   font-size:20px;
 }
+
 .d1{
   padding:0px;
 }
