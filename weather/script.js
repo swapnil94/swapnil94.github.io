@@ -60,6 +60,7 @@ function fromLocation(loc){
 function getWeather(latlonString){
 
   let weatherAPIEndpoint = "https://api.darksky.net/forecast/"+ weatherAPIKey+ "/" + latlonString + "?units=ca&callback=?";
+  console.log(weatherAPIEndpoint);
   $.getJSON(
     weatherAPIEndpoint,
     function(json) {

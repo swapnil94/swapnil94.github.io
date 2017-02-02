@@ -16,6 +16,12 @@ body{
   font-weight:900;
   
 }
+.data, .data1{
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: gray;
+}
+
 .data{
   margin-top:5%;
 }
@@ -32,4 +38,10 @@ body{
   display: -webkit-flex;
   display: -ms-flexbox;
   display:         flex;
+}
+
+.footer{
+  position: fixed;
+  bottom: 0;
+  right: 0;
 }
