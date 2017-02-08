@@ -1,0 +1,30 @@
+*{
+  font-family:orbitron;
+}
+body{
+}
+.header{
+  font-size:5em;
+}
+#controls{
+  margin-top:2%;
+  font-size:14px;
+}
+.dec, .inc, .val{
+  padding:3px;
+  font-size:1.8em;
+}
+.cursor:hover{
+  cursor:pointer;
+}
+#clock{
+  border:3px solid green;
+  border-radius:50%;
+  width:300px;
+  height:300px;
+  margin:0 auto;
+}
+#clocktext,#timer{
+  padding-top:20%;
+  font-size:3em;
+}

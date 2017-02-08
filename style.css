@@ -5,13 +5,16 @@
 a {
   text-decoration: none !important;
 }
+
 .navbar-header{
   margin-left:8%;
 }
+
 .navbar-collapse{
   margin-right:8%;
   margin-left:8%;
 }
+
 .page {
   padding: 17% 5% 17% 5%;
 }
@@ -76,10 +79,12 @@ a {
 .project{
   position:relative;
 }
+
 .project:hover{
   transform:scale(1.1,1.1);
   transition:0.3s ease-in-out;
 }
+
 .textonimg{
   font-size:10px;
   position:absolute;

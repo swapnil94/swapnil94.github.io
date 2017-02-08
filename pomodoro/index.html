@@ -1,0 +1,51 @@
+<!Doctype html>
+<html>
+<head>
+  <title>Pomodoro Clock</title>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Orbitron">
+  <link rel="stylesheet" type="text/css" href="style.css"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="script.js"></script>
+
+</head>
+<body>
+<div class="container-fluid text-center">
+  <div class="row header">Pomodoro Clock
+  </div>
+  <div id="controls" class="row">
+    <div class="col-md-4 col-sm-4 col-xs-4"></div>
+    <div class="col-md-2 col-sm-2 col-xs-2 well">
+      <div id="break">
+        <span id="break_head">BREAK<br/>LENGTH</span><br>
+        <span id="break_dec" class="dec cursor">-</span>
+        <span id="break_val" class="val"></span>
+        <span id="break_inc" class="inc cursor">+</span>
+      </div>
+    </div>
+    <div class="col-md-2 col-sm-2 col-xs-2 well">
+      <div id="break">
+        <span id="sess_head">SESSION<br/>LENGTH</span><br>
+        <span id="sess_dec" class="dec cursor">-</span>
+        <span id="sess_val" class="val"></span>
+        <span id="sess_inc" class="inc cursor">+</span>
+      </div>
+    </div>
+    <div class="col-md-4 col-sm-4 col-xs-4"></div>
+  </div>
+  <div class="row">
+    <div id="clock" class="cursor">
+      <div id="clocktext">
+        Session
+      </div>
+      <div id="timer">
+        <span id="timermin"></span>
+        <span id="timercolon">:</span>
+        <span id="timersec"></span>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
