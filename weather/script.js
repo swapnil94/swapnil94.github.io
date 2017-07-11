@@ -1,4 +1,3 @@
-
 const weatherAPIKey = "5666c4c14907952edf5f47bf61b14bd9";
 const geocodeAPIKey = "AIzaSyDpJsYiCtBTAo5x5-ABdGlx38lrhSOgR4M";
 let unit = "metric";
@@ -57,7 +56,7 @@ function fromLocation(loc){
 
 function getWeather(latlonString){
 
-  let weatherAPIEndpoint = "https://api.darksky.net/forecast/"+weatherAPIKey+"/"+latlonString+"?units=ca&callback=";
+  let weatherAPIEndpoint = "https://api.darksky.net/forecast/"+ weatherAPIKey+ "/" + latlonString + "?units=ca&callback=?";
   console.log(weatherAPIEndpoint);
   $.getJSON(
     weatherAPIEndpoint,
@@ -153,4 +152,3 @@ function setSkyConWallpaper(icon){
       $("body").css("background", "url(images/default.jpg) no-repeat");
   }
 }
-
