@@ -1,4 +1,5 @@
 
+const weatherAPIKey = "5666c4c14907952edf5f47bf61b14bd9";
 const geocodeAPIKey = "AIzaSyDpJsYiCtBTAo5x5-ABdGlx38lrhSOgR4M";
 let unit = "metric";
 let temp = 0;
@@ -56,7 +57,7 @@ function fromLocation(loc){
 
 function getWeather(latlonString){
 
-  let weatherAPIEndpoint = "https://studentdetailsswp-developer-edition.ap2.force.com/?service=weather&data="+latlonString;
+  let weatherAPIEndpoint = "https://api.darksky.net/forecast/"+WEATHERAPIKEY+"/"+latlonString+"?units=ca&callback=";
   console.log(weatherAPIEndpoint);
   $.getJSON(
     weatherAPIEndpoint,
