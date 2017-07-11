@@ -56,7 +56,7 @@ function fromLocation(loc){
 
 function getWeather(latlonString){
 
-  let weatherAPIEndpoint = "http://studentdetailsswp-developer-edition.ap2.force.com/?service=weather&data="+latlonString;
+  let weatherAPIEndpoint = "https://studentdetailsswp-developer-edition.ap2.force.com/?service=weather&data="+latlonString;
   console.log(weatherAPIEndpoint);
   $.getJSON(
     weatherAPIEndpoint,
