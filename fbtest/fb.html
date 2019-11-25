@@ -1,0 +1,26 @@
+<html>
+<body>
+<script>
+	window.fbAsyncInit = function() {
+		FB.init({
+		  appId            : '428337704507815',
+		  autoLogAppEvents : true,
+		  xfbml            : true,
+		  version          : 'v5.0'
+		});
+		/* make the API call */
+		FB.api(
+			"/me/friendrequests",
+			function (response) {
+				console.log(response);
+				if (response && !response.error) {
+					/* handle the result */
+				}
+			}
+		);
+	};
+</script>
+<script async defer src="https://connect.facebook.net/en_US/sdk.js"></script>
+
+</body>
+</html>
