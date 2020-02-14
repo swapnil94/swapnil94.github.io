@@ -1,0 +1,27 @@
+<!Doctype html>
+<html>
+<head>
+	<title>Currency Tracker</title>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" type="text/css" href="style.css"/>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script>
+	const endpoint = 'https://cors-anywhere.herokuapp.com/https://www.instarem.com/api/v1/public/transaction/computed-value?source_currency=MYR&destination_currency=INR&instarem_bank_account_id=26&source_amount=5000';
+	$(document).ready(function() {
+		var req = new XMLHttpRequest();
+		req.open('GET', endpoint);
+		req.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+		req.onload = function() {
+			var responseText = xhr.responseText;
+			console.log(responseText);
+			// process the response.
+		};
+		req.send();
+	});
+	</script>
+</head>
+<body>
+	Current Rate: <span id="curr-rate"></span>
+	Converted Amount(5000 RM): <span id="converted-amount"></span>
+</body>
+</html>
